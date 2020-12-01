@@ -5,14 +5,41 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+  <context-param>
+    <param-name>loc</param-name>
+    <param-value>china</param-value>
+  </context-param>
+  <context-param>
+    <param-name>type</param-name>
+    <param-value>human</param-value>
+  </context-param>
+
   <servlet>
     <servlet-name>testServlet</servlet-name>
     <servlet-class>com.steven.start.servlet.TestServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>initParamXmlServlet</servlet-name>
+    <servlet-class>com.steven.start.servlet.InitParamXmlServlet</servlet-class>
+    <init-param>
+      <param-name>tel</param-name>
+      <param-value>1345453465346</param-value>
+    </init-param>
+    <init-param>
+      <param-name>email</param-name>
+      <param-value>yy31267846284@qq.com</param-value>
+    </init-param>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>testServlet</servlet-name>
-    <url-pattern>/servlet/testServlet</url-pattern>
+    <url-pattern>/servlet/test_servlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>initParamXmlServlet</servlet-name>
+    <url-pattern>/servlet/init_param</url-pattern>
   </servlet-mapping>
 
 </web-app>
