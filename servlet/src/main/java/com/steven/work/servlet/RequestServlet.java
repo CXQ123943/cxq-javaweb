@@ -1,4 +1,4 @@
-package com.steven.oper.servlet;
+package com.steven.work.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,7 +29,7 @@ public class RequestServlet extends HttpServlet {
         System.out.println("queryString: " + req.getQueryString());
         System.out.println("userAgent: " + req.getHeader("User-Agent"));
         for (Cookie cookie : req.getCookies()) {
-            System.out.println(cookie.getName() + "-" + cookie.getValue());
+            System.out.println(cookie.getName() + "=" + cookie.getValue());
         }
     }
 
