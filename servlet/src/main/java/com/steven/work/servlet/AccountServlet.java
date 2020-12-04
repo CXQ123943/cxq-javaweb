@@ -2,7 +2,6 @@ package com.steven.work.servlet;
 
 import com.steven.work.service.impl.AccountServiceImpl;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +17,7 @@ import java.io.PrintWriter;
 public class AccountServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         req.setCharacterEncoding("UTF-8");
         final String LOGIN = "login";
@@ -44,7 +43,7 @@ public class AccountServlet extends HttpServlet {
         writer.println("</head>");
         writer.println("<body>");
         if (result) {
-            writer.println("<h1>登录成功...</h1>");
+            writer.println("<span>账号：</span>" + username + "<h1>登录成功...</h1>");
         } else {
             writer.println("<h1>登录失败...</h1>");
         }
@@ -53,7 +52,7 @@ public class AccountServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         this.doGet(req, resp);
     }
 }
