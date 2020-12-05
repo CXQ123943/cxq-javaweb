@@ -42,7 +42,8 @@ public class RedirectServlet extends HttpServlet {
         if (result) {
             // 重定向跳到主页面
             System.out.println("重定向成功");
-            resp.sendRedirect(req.getContextPath() + "/view/main.html");
+            // resp.sendRedirect(req.getContextPath() + "/view/main.html");
+            resp.sendRedirect(req.getContextPath() + "/web-inf-res");
         } else {
             // 重定向跳回登录页面
             System.out.println("重定向失败");
