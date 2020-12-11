@@ -21,11 +21,25 @@
       </session-config>
   -->
 
+  <filter>
+    <filter-name>EncodingXmlFilter</filter-name>
+    <filter-class>com.steven.filter.EncodingXmlFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingXmlFilter</filter-name>
+    <url-pattern>/api/*</url-pattern>
+  </filter-mapping>
+
   <!--想要访问WEB-INF下的文件就需要配置-->
-  <servlet>
+  <!--<servlet>
     <servlet-name>webInfRes</servlet-name>
     <jsp-file>/WEB-INF/web-inf-res.html</jsp-file>
-  </servlet>
+  </servlet>-->
+
+  <!--<servlet-mapping>
+    <servlet-name>webInfRes</servlet-name>
+    <url-pattern>/web-inf-res</url-pattern>
+  </servlet-mapping>-->
 
   <servlet>
     <servlet-name>testServlet</servlet-name>
@@ -44,11 +58,6 @@
       <param-value>yy31267846284@qq.com</param-value>
     </init-param>
   </servlet>
-
-  <servlet-mapping>
-    <servlet-name>webInfRes</servlet-name>
-    <url-pattern>/web-inf-res</url-pattern>
-  </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>testServlet</servlet-name>
