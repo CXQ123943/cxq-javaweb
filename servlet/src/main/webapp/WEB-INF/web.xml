@@ -30,6 +30,10 @@
     <url-pattern>/api/*</url-pattern>
   </filter-mapping>
 
+  <listener>
+    <listener-class>com.steven.listener.XmlListener</listener-class>
+  </listener>
+
   <!--想要访问WEB-INF下的文件就需要配置-->
   <!--<servlet>
     <servlet-name>webInfRes</servlet-name>
